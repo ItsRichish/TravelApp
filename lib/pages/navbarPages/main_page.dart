@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_travel_app/pages/navbarPages/bar_page.dart';
-import 'package:flutter_travel_app/pages/navbarPages/home_page.dart';
+import 'package:flutter_travel_app/pages/home_page.dart';
 import 'package:flutter_travel_app/pages/navbarPages/profile_page.dart';
 import 'package:flutter_travel_app/pages/navbarPages/search_page.dart';
 

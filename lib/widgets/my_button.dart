@@ -1,23 +1,37 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_travel_app/misc/my_colors.dart';
+import 'package:flutter_travel_app/widgets/app_text.dart';
 
 class MyButton extends StatelessWidget {
   bool? isResponsive;
   double? width;
-  MyButton({Key? key, this.isResponsive = false, this.width}) : super(key: key);
+  MyButton({Key? key, this.isResponsive = false, this.width = 120})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      height: 60,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: MyColors.mainColor,
+    return Flexible(
+      child: Container(
+        width: isResponsive == true ? double.maxFinite : width,
+        height: 60,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: MyColors.mainColor,
+        ),
+        child: Row(
+            mainAxisAlignment: isResponsive == true
+                ? MainAxisAlignment.spaceAround
+                : MainAxisAlignment.center,
+            children: [
+              isResponsive == true
+                  ? AppText(
+                      text: "Book Trip Now",
+                      color: Colors.white,
+                    )
+                  : Container(),
+              Image.asset("assets/img/button-one.png")
+            ]),
       ),
-      child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [Image.asset("assets/img/button-one.png")]),
     );
   }
 }
